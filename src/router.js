@@ -306,6 +306,8 @@ const process = (stackObj, directCall) => {
 		: stackObj.result;
 
 	Object.assign(stack[routerId], {
+		resultFunc: targetFunction,
+		resultProps: targetProps,
 		result,
 		reducedPath,
 		matchedRoute: route,
@@ -369,6 +371,8 @@ export const useRoutes = (routeObj) => {
 			matchedRoute: null,
 			reducedPath: null,
 			passContext: false,
+			resultFunc: null,
+			resultProps: {},
 			result: null
 		};
 
